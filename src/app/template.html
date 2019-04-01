@@ -1,0 +1,87 @@
+<div id="app">
+    <section class="result">
+        <h1 class="result__caption">New User</h1>
+        <div class="result_info">
+            <p>
+                <span class="result_info-firstName" v-if="firstName !== ''">{{firstName}}</span>
+                <span class="result_info-firstName" v-else>Firstname</span>
+                <span class="result_info-lastName" v-if="lastName !== ''">{{lastName}} / </span>
+                <span class="result_info-lastName" v-else>Lastname /</span>
+                <span class="result_info-login" v-if="login !== ''">{{login}}</span>
+                <span class="result_info-login" v-else>SomecollLogin</span>
+            </p>
+            <p>
+                <span class="result_info-email" v-if="email !== ''">{{email}}</span>
+                <span class="result_info-email" v-else>SomeCool@gmail.com</span>
+            </p>
+        </div>
+    </section>
+    <section class="form">
+        <h1 class="form__caption">Sign up</h1>
+        <div class="form__body">
+
+            <div class="form__body form__body-first-col">
+
+                <div class="form__login">
+                    <label class="form__label" for="login">LOGIN<span class="form__label-star">*</span></label>
+                    <input type="text" id="login" placeholder="SomecollLogin" @input="setLogin">
+                </div>
+
+                <div class="form__email">
+                    <label class="form__label" for="email">E-MAIL<span class="form__label-star">*</span></label>
+                    <input type="email" id="email" placeholder="SomeCool@gmail.com" @input="setEmail">
+                </div>
+
+                <div class="form__password">
+                    <label class="form__label" for="password">PASSWORD<span class="form__label-star">*</span></label>
+                    <input type="password" id="password" @input="setPassword">
+                </div>
+
+            </div>
+
+
+            <div class="form__body form__body-second-col">
+
+                <div class="form__first-name">
+                    <label class="form__label" for="first-name">FIRST NAME</label>
+                    <input type="text" id="first-name" placeholder="Firstname" @input="setFirstName">
+                </div>
+
+                <div class="form__country">
+                    <label class="form__label">COUNTRY</label>
+                    <multiselect @input="setCountry" v-model="valueForSelectCountry" deselect-label="Can't remove this value" track-by="country" label="country" placeholder="Select" :options="optionsForCountry" :searchable="false" :allow-empty="false" :max-height="150" :max="3"></multiselect>
+                </div>
+
+                <div class="form__date-of-birth">
+                    <label class="form__label">DATE OF BIRTH</label>
+                    <datepicker @input="setDate" v-model="date" name="uniquename"></datepicker>
+                </div>
+
+            </div>
+
+
+            <div class="form__body form__body-third-col">
+
+                <div class="form__last-name">
+                    <label class="form__label" for="last-name">LAST NAME</label>
+                    <input type="text" id="last-name" placeholder="Lastname" @input="setLastName">
+                </div>
+
+                <div class="form__city">
+                    <label class="form__label">CITY</label>
+                    <multiselect :disabled="isDisabledSelectCity" @input="setCity" v-model="valueForSelectCity" deselect-label="Can't remove this value" placeholder="Select" :options="optionsForCity" :searchable="false" :allow-empty="false" :max-height="150" :max="3"></multiselect>
+                </div>
+
+                <div class="form__zip-code">
+                    <label class="form__label" for="zip-code">ZIP CODE</label>
+                    <input type="text" id="zip-code" @input="setZipCode">
+                </div>
+
+            </div>
+            <div class="form__hint" v-if="!(isLogin && isEmail && isPassword)">
+                Please fill in the fields marked with "*"
+            </div>
+            <button class="form__sign-up-btn" :class="{'form__sign-up-btn_not-active': !(isLogin && isEmail && isPassword)}">SIGN UP</button>
+        </div>
+    </section>
+</div>

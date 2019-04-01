@@ -1,0 +1,170 @@
+@import "../../node_modules/vue-multiselect/dist/vue-multiselect.min.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e9eff2;
+}
+
+h1 {
+    font-size: 32px;
+    color: #343e5c;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    min-height: 170px;
+    background-color: white;
+    margin: 5% auto 2%;
+}
+
+.result span {
+    font-size: 14px;
+    color: #3a405b;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    padding: 0 2px;
+}
+
+.result span.result_info-login {
+    color: #adb1bd;
+}
+
+.result_info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    min-height: 60px;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    min-height: 170px;
+    background-color: white;
+    margin: 0 auto 100px;
+}
+
+.form__caption {
+    margin: 60px 0 20px;
+}
+
+.form__body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.form__body input {
+    cursor: pointer;
+}
+
+.form__body.form__body-first-col {
+    width: 80%;
+}
+
+.form__body-first-col div {
+    width: 100%;
+    margin: 2% 0;
+}
+.form__body-first-col input {
+    width: 94%;
+    padding: 0 3%;
+    margin-top: 5px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #d5dce6;
+}
+
+.form__body.form__body-second-col,
+.form__body.form__body-third-col {
+    width: 42%;
+    flex-direction: column;
+}
+.form__body.form__body-second-col > div,
+.form__body.form__body-third-col > div {
+    cursor: pointer;
+    width: 90%;
+    margin: 2% 0;
+}
+
+.form__body.form__body-second-col input,
+.form__body.form__body-third-col input {
+    width: 94%;
+    padding: 0 3%;
+    margin-top: 5px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #d5dce6;
+}
+
+.form__body.form__body-second-col > div:nth-of-type(2) > label,
+.form__body.form__body-third-col > div:nth-of-type(2) > label {
+    margin: 2% 0;
+    display: block;
+}
+
+.form__body.form__body-second-col > div:nth-of-type(3) input {
+    width: 100%;
+    background-image: url("../assets/datapicker.png");
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+}
+
+.form__label {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #7a8196;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.form__label-star {
+    color: #ec5b5c;
+}
+
+.form__sign-up-btn {
+    width: 80%;
+    height: 42px;
+    background-color: #4be1ab;
+    border: 0;
+    border-radius: 0 25px 25px 25px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    margin: 12% 0 10%;
+    cursor: pointer;
+}
+
+.form__sign-up-btn_not-active {
+    pointer-events: none;
+    margin: 0 0 10%;
+}
+
+.form__hint {
+    color: #ec5b5c;
+    margin: 5%;
+}
